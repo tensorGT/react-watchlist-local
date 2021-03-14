@@ -43,3 +43,25 @@ export default function App() {
 
   function removeItem(id) {
     setItems(items.filter((it) => it.id !== id));
+  }
+
+  const visible = items.filter((it) => {
+    if (filterStatus !== "All" && it.status !== filterStatus) return false;
+    if (search.trim() && !it.title.toLowerCase().includes(search.trim().toLowerCase())) return false;
+    return true;
+  });
+
+  return (
+    <div className="app">
+      <header className="header">
+        <h1>Movie &amp; Show Watchlist</h1>
+        <p>small react app for track what i want to watch, save in localStorage.</p>
+      </header>
+
+      <form className="add-form" onSubmit={handleAdd}>
+        <input
+          type="text"
+          placeholder="Movie or show title..."
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
