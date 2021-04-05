@@ -38,3 +38,17 @@ input, select, button {
   border-radius: 6px;
   font-size: 0.9rem;
 }
+
+.add-form input[type="text"] {
+  flex: 1 1 180px;
+}
+
+button {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.del-btn {

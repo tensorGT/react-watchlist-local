@@ -65,3 +65,26 @@ export default function App() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
+        />
+        <select value={status} onChange={(e) => setStatus(e.target.value)}>
+          {STATUSES.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
+        <select value={rating} onChange={(e) => setRating(e.target.value)}>
+          <option value={0}>No rating</option>
+          {[1, 2, 3, 4, 5].map((n) => (
+            <option key={n} value={n}>{n} star</option>
+          ))}
+        </select>
+        <button type="submit">Add</button>
+      </form>
+
+      <div className="filters">
+        <input
+          type="search"
+          placeholder="Search title..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
