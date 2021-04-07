@@ -7,3 +7,5 @@ learning react state, controlled inputs, and `localStorage` by making a simple m
 - search by title and filter by status
 - saves automatically in `localStorage`
 
+## run
+```bash

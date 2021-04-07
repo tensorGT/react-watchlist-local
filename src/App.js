@@ -88,3 +88,25 @@ export default function App() {
           onChange={(e) => setSearch(e.target.value)}
         />
         <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
+          <option value="All">All statuses</option>
+          {STATUSES.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
+      </div>
+
+      <ul className="list">
+        {visible.length === 0 ? (
+          <li className="item">Nothing found here.</li>
+        ) : (
+          visible.map((it) => (
+            <li key={it.id} className="item">
+              <div>
+                <strong>{it.title}</strong>
+              </div>
+              <div className="item-actions">
+                <select
+                  value={it.status}
+                  onChange={(e) => updateItem(it.id, { status: e.target.value })}
+                >
+                  {STATUSES.map((s) => (
