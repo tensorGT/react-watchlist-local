@@ -9,3 +9,6 @@ learning react state, controlled inputs, and `localStorage` by making a simple m
 
 ## run
 ```bash
+npm install
+npm start
+```

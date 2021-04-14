@@ -110,3 +110,26 @@ export default function App() {
                   onChange={(e) => updateItem(it.id, { status: e.target.value })}
                 >
                   {STATUSES.map((s) => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
+                <select
+                  value={it.rating}
+                  onChange={(e) => updateItem(it.id, { rating: Number(e.target.value) })}
+                >
+                  <option value={0}>-</option>
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <option key={n} value={n}>{n}★</option>
+                  ))}
+                </select>
+                <button type="button" className="del-btn" onClick={() => removeItem(it.id)}>
+                  Delete
+                </button>
+              </div>
+            </li>
+          ))
+        )}
+      </ul>
+    </div>
+  );
+}
